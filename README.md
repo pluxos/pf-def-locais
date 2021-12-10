@@ -2,7 +2,7 @@
 
 
 # Conteúdo
-Equações simples com uso de casamento de padrões.
+Equações simples com uso de `let-in` e `where`
 
 # Exercícios simples
 
