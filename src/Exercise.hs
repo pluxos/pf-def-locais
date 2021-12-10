@@ -1,108 +1,38 @@
 module Exercise where
+import Data.Char (isUpper,isLower,toUpper,toLower,isLetter)
 
--- Defina as seguintes funções usando casamento de padrões.
+-- Defina as seguintes funções usando let in e where para fazer definições locais de testes de condições.
+-- Inclua os tipos.
 
-{-
-Esta função calcula calcula se o primeiro valor ganha do segundo em um jogo de pedra/tesoura/papel
 
-pedraTesouraPapelPadrões
-- Entrada: m1 m2 - 0 é pedra, 1 é tesoura, 2 é papel.
-- Saída: True se m1 ganha e False se m2 ganha
-
->>>pedraTesouraPapelPadrões 0 1
-True
-
->>>pedraTesouraPapelPadrões 1 2
-True
-
->>>pedraTesouraPapelPadrões 2 0
-True
-
->>>pedraTesouraPapelPadrões 1 0
-False
-
->>>pedraTesouraPapelPadrões 2 1
-False
-
->>>pedraTesouraPapelPadrões 0 2
-False
--}
-pedraTesouraPapelPadrões m1 m2 = undefined
+imc :: Float -> Float -> String
+imc p a
+    | imc' <= baixo = "Baixo"
+    | imc' <= normal = "Normal"
+    | imc' <= alto = "Alto"
+    where imc' = p/a^2
+          baixo = 18.5
+          normal = 25.0
+          alto = 30.0
 
 {-
-Esta função retorna a quantidade de dias no mês indicado no parâmetro. Assuma que fevereiro tem 28 dias.
-- Entrada: mes - número
-- Saída: Dias no mes
+Esta função recebe uma letra e inverte o case dela. Isto é, se for minúscula, retorna maiúscula e se forma maiúscula retorna minúscula. Se na nao for letra, retorna a mesma coisa.
 
->>>diasMesPadrões 1
-31
-
->>>diasMesPadrões 2
-28
-
->>>diasMesPadrões 4
-30
-
--}
-diasMesPadrões m = undefined
-
-
-{- 
-Esta função retorna o E lógico das suas entradas, sem usar o operador &&
-- Entrada: b1 - booleano
-           b2 - booleano
-- Saída: b1 && b2
-
->>> eLógico True True
-True
-
->>> eLógico False True
-False
-
->>> eLógico True False
-False
-
->>> eLógico False False
-False
-
--}
-eLógico b1 b2 = undefined 
-
-
-{- 
-Esta função retorna o OU lógico das suas entradas, sem usar o operador ||
-- Entrada: b1 - booleano
-           b2 - booleano
-- Saída: b1 || b2
-
->>> ouLógico True True
-True
-
->>> ouLógico False True
-True
-
->>> ouLógico True False
-True
-
->>> ouLógico False False
-False
-
--}
-ouLógico b1 b2 = undefined 
-
-
-{- 
-Esta função diz se um caractere é uma vogal.
+inverteCase
 - Entrada: c - caractere
-- Saída: True se c = A,E,I,O,U,a,e,i,o,u
+- Saída: se c é minúscula/maiúscula, então o maiúsculo/minúsculo correspondente.
 
->>> éVogal 'a'
-True
+>>>inverteCase 'a'
+'A'
 
->>> éVogal 'B'
-False
+>>>inverteCase 'A'
+'a'
+
+>>>inverteCase '3'
+'3'
+
+>>>inverteCase ' '
+' '
 
 -}
-éVogal c = undefined 
-
-
+inverteCase c = undefined 
