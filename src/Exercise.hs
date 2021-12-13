@@ -1,5 +1,4 @@
 module Exercise where
-import Data.Char (isUpper,isLower,toUpper,toLower,isLetter)
 
 -- Defina as seguintes funções usando let in e where para fazer definições locais de testes de condições.
 -- Inclua os tipos.
@@ -7,10 +6,11 @@ import Data.Char (isUpper,isLower,toUpper,toLower,isLetter)
 
 imc :: Float -> Float -> String
 imc p a
-    | imc' <= baixo = "Baixo"
+    | imc' <= baixo  = "Baixo"
     | imc' <= normal = "Normal"
-    | imc' <= alto = "Alto"
-    where imc' = p/a^2
+    | imc' <= alto   = "Alto"
+    | otherwise     = "Altíssimo"
+    where imc' = p/a**2
           baixo = 18.5
           normal = 25.0
           alto = 30.0
@@ -35,4 +35,23 @@ inverteCase
 ' '
 
 -}
-inverteCase c = undefined 
+inverteCase :: p -> a
+inverteCase c = undefined
+
+
+{-
+Esta função retorna a representação textual de uma data. Isto é, dados dia, mês e ano em sua forma numérica, retorna a data por extenso.
+
+Use ++ para concatenar duas Strings.
+Use show para gerar uma string a partir de um número.
+>>>dataPorExtenso 10 10 2021
+"dez de Outubro de 2021"
+
+>>>dataPorExtenso 1 1 1900
+"primeiro de Janeiro de 1900"
+
+-}
+
+dataPorExtenso d m a = diaPorExtenso d ++ " de " ++ mêsPorExtenso m ++ " de " ++ show a
+    where diaPorExtenso dia = undefined
+          mêsPorExtenso mmes = undefined 
